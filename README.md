@@ -42,7 +42,7 @@ Front-End Code (Angular)
 HTML (login.component.html):
 -------
 
-### Backend Setup:
+**Backend Setup:**
 
 **Install Java and Maven.**
 **Navigate to the backend directory.**
@@ -81,9 +81,9 @@ Run database migrations (if any).
     <button type="submit">Login</button>
   </form>
 </div>
-------
+```
 
-###** TypeScript (login.component.ts):**
+**TypeScript (login.component.ts):**
 
 ```sh
 import { Component } from '@angular/core';
@@ -105,7 +105,7 @@ export class LoginComponent {
     });
   }
 }
-------
+```
 
 ### Back-End Code (Spring Boot)
 **Controller (AuthController.java):**
@@ -123,7 +123,7 @@ public class AuthController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
 }
-------
+```
 
 ### Service (AuthService.java):
 ```sh
@@ -144,4 +144,4 @@ public class AuthService {
         return jwtUtils.generateJwtToken(authentication);
     }
 }
------
+```
