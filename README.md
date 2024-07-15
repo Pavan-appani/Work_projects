@@ -83,8 +83,7 @@ Run database migrations (if any).
 </div>
 ------
 
-
-## TypeScript (login.component.ts):
+###** TypeScript (login.component.ts):**
 
 ```sh
 import { Component } from '@angular/core';
@@ -108,7 +107,7 @@ export class LoginComponent {
 }
 ------
 
-## Back-End Code (Spring Boot)
+### Back-End Code (Spring Boot)
 **Controller (AuthController.java):**
 ```sh
 @RestController
@@ -126,7 +125,7 @@ public class AuthController {
 }
 ------
 
-## Service (AuthService.java):
+### Service (AuthService.java):
 ```sh
 @Service
 public class AuthService {
