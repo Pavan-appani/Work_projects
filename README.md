@@ -46,3 +46,21 @@ HTML (login.component.html):
 
 **Install Java and Maven.**
 **Navigate to the backend directory.**
+
+## Frontend Setup:
+
+**Install Node.js and Angular CLI.**
+**Navigate to the frontend directory.**
+
+### Database Setup:
+
+## Install MySQL.
+**Description**
+Create a database and configure the application.properties file in the backend with your database credentials.
+Run database migrations (if any).
+## Usage
+- **Access the application at http://localhost:4200.**
+- **Register a new user or log in with existing credentials.**
+- **Use the task management features to create, assign, and track tasks.**
+- **Generate reports through the reporting module.**
+- **Utilize the SAP integration for enhanced data synchronization.**
