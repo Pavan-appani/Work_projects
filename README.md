@@ -81,3 +81,68 @@ Run database migrations (if any).
     <button type="submit">Login</button>
   </form>
 </div>
+------
+
+
+## TypeScript (login.component.ts):
+
+```sh
+import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html'
+})
+export class LoginComponent {
+  username: string;
+  password: string;
+
+  constructor(private authService: AuthService) {}
+
+  onSubmit() {
+    this.authService.login(this.username, this.password).subscribe(response => {
+      console.log('User logged in:', response);
+    });
+  }
+}
+------
+
+## Back-End Code (Spring Boot)
+**Controller (AuthController.java):**
+```sh
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired
+    private AuthService authService;
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        String token = authService.authenticateUser(loginRequest);
+        return ResponseEntity.ok(new JwtResponse(token));
+    }
+}
+------
+
+## Service (AuthService.java):
+```sh
+@Service
+public class AuthService {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtUtils jwtUtils;
+
+    public String authenticateUser(LoginRequest loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return jwtUtils.generateJwtToken(authentication);
+    }
+}
+-----
