@@ -40,3 +40,9 @@ This module integrates the task management system with SAP using the Java Connec
 
 Front-End Code (Angular)
 HTML (login.component.html):
+-------
+
+### Backend Setup:
+
+**Install Java and Maven.**
+**Navigate to the backend directory.**
