@@ -64,3 +64,20 @@ Run database migrations (if any).
 - **Use the task management features to create, assign, and track tasks.**
 - **Generate reports through the reporting module.**
 - **Utilize the SAP integration for enhanced data synchronization.**
+
+2. **Set UP**
+ ```sh
+ <div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
